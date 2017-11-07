@@ -29,7 +29,7 @@ public class MealsUtil {
         mealsWithExceeded.forEach(System.out::println);
 
         System.out.println(getFilteredWithExceededByCycle(meals, LocalTime.of(7, 0), LocalTime.of(12, 0), 2000));
-        System.out.println(getFilteredWithExceededInOnePass(meals, LocalTime.of(7, 0), LocalTime.of(12, 0), 2000));
+        //System.out.println(getFilteredWithExceededInOnePass(meals, LocalTime.of(7, 0), LocalTime.of(12, 0), 2000));
         System.out.println(getFilteredWithExceededInOnePass2(meals, LocalTime.of(7, 0), LocalTime.of(12, 0), 2000));
     }
 
@@ -59,7 +59,7 @@ public class MealsUtil {
         });
         return mealsWithExceeded;
     }
-
+    /*
     public static List<MealWithExceed> getFilteredWithExceededInOnePass(List<Meal> meals, LocalTime startTime, LocalTime endTime, int caloriesPerDay) {
         Collection<List<Meal>> list = meals.stream()
                 .collect(Collectors.groupingBy(Meal::getDate)).values();
@@ -71,7 +71,7 @@ public class MealsUtil {
                     .map(meal -> createWithExceed(meal, exceed));
         }).collect(toList());
     }
-
+    */
     public static List<MealWithExceed> getFilteredWithExceededInOnePass2(List<Meal> meals, LocalTime startTime, LocalTime endTime, int caloriesPerDay) {
         final class Aggregate {
             private final List<Meal> dailyMeals = new ArrayList<>();
