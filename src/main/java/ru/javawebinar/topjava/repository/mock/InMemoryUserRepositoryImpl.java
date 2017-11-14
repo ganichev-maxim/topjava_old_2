@@ -49,7 +49,9 @@ public class InMemoryUserRepositoryImpl implements UserRepository {
         log.info("getAll");
         return repository.values()
                 .stream()
-                .sorted((user1, user2)->user1.getName().compareTo(user2.getName()))
+                .sorted((user1, user2)->user1.getName().equals(user2.getName())?
+                                        user1.getId().compareTo(user2.getId()):
+                                        user1.getName().compareTo(user2.getName()))
                 .collect(Collectors.toList());
     }
 
