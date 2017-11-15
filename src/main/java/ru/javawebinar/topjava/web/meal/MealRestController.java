@@ -28,7 +28,7 @@ public class MealRestController {
 
     public Collection<MealWithExceed> getAll() {
         log.info("getAll");
-        return service.getAll(AuthorizedUser.id());
+        return service.getAll(AuthorizedUser.id() , AuthorizedUser.getCaloriesPerDay());
     }
 
     public Meal get(int id) {
