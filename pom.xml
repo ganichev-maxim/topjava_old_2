@@ -301,6 +301,7 @@
                     <groupId>org.postgresql</groupId>
                     <artifactId>postgresql</artifactId>
                     <version>${postgresql.version}</version>
+                    <scope>compile</scope>
                 </dependency>
                 <dependency>
                     <groupId>org.apache.tomcat</groupId>
